@@ -17,6 +17,13 @@ app.use(cors({
 app.use(express.json());// The data we get is in json format so to pass it in string we use this
 app.use(express.urlencoded({extended: true}));// It checks the data types
 
+app.get("/", (req,res)=>{
+    res.json({
+        success:true,
+        message: "Event New Project",
+    });
+});
+
 app.use("/api/v1/message",messageRouter)
 
 dbConnection();
